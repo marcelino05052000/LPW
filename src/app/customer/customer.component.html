@@ -1,35 +1,34 @@
 <div class="row">
-  <div class="col-md-5">
-    <form [formGroup]="this.customerService.form" (ngSubmit)="onSubmit()">
-      <input type="hidden" formControlName="$key">
-      <div class="form-group">
-        <label>Orgão da UASG</label>
-        <input formControlName="orgao" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.orgao.errors}">
-        <div class="invalid-feedback" *ngIf="submitted && formControls.orgao.errors">
-          Preencha este campo</div>
-      </div>
-      <div class="form-group">
-        <label>Objeto</label>
-        <input formControlName="objeto" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.objeto.errors}">
-        <div class="invalid-feedback" *ngIf="submitted && formControls.objeto.errors">
-          Preencha este campo</div>
-      </div>
-      <div class="form-group">
-        <label>Prazo</label>
-        <input formControlName="prazo" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.prazo.errors}">
-        <div class="invalid-feedback" *ngIf="submitted && formControls.prazo.errors">
-          <label *ngIf="formControls.prazo.errors.required">Preencha este campo</label>
+    <div class="col-md-5">
+      <form [formGroup]="this.customerService.form" (ngSubmit)="onSubmit()">
+        <input type="hidden" formControlName="$key">
+        <div class="form-group">
+          <label>Orgão da UASG</label>
+          <input formControlName="orgao" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.orgao.errors}">
+          <div class="invalid-feedback" *ngIf="submitted && formControls.orgao.errors">
+            Preencha este campo</div>
         </div>
+        <div class="form-group">
+          <label>Objeto</label>
+          <input formControlName="objeto" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.objeto.errors}">
+          <div class="invalid-feedback" *ngIf="submitted && formControls.objeto.errors">
+            Preencha este campo</div>
+        </div>
+        <div class="form-group">
+          <label>Prazo</label>
+          <input formControlName="prazo" class="form-control" [ngClass]="{'is-invalid':submitted && formControls.prazo.errors}">
+          <div class="invalid-feedback" *ngIf="submitted && formControls.prazo.errors">
+            <label *ngIf="formControls.prazo.errors.required">Preencha este campo</label>
+          </div>
+        </div>
+        <div class="form-group">
+          <input type="submit" class="btn btn-primary" value="Adicionar">
+        </div>
+      </form>
+      <div class="alert alert-info"  *ngIf="showSuccessMessage">
+        Adicionado com sucesso.
       </div>
-      <div class="form-group">
-        <input type="submit" class="btn btn-primary" value="Adicionar">
-      </div>
-    </form>
-    <div class="alert alert-info"  *ngIf="showSuccessMessage">
-      Adicionado com sucesso.
+    </div>
+    <div class="col-md-7">
     </div>
   </div>
-  <div class="col-md-7">
-    <app-customer-list></app-customer-list>
-  </div>
-</div>

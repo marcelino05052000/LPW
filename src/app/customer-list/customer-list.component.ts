@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
 import { CustomerService } from '../shared/customer.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { CustomerService } from '../shared/customer.service';
 })
 export class CustomerListComponent implements OnInit {
 
-  constructor(private customerService: CustomerService) { }
+  constructor(private router: Router, private customerService: CustomerService) { }
   customerArray = [];
   showDeletedMessage: boolean;
   searchText: string = "";

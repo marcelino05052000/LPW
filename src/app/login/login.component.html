@@ -1,0 +1,16 @@
+<h3>Login</h3>
+
+<div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-4">
+        <div class="ui-inputgroup">
+            <input [(ngModel)]="usuario.nome" id="usuario" type="text" pInputText placeholder="Username">         
+        </div>
+    </div>
+
+<div class="row">
+    <div class="input-field col s12">
+      <input [(ngModel)]="usuario.senha" id="senha" type="password" pPassword placeholder="Senha"/>
+    </div>
+</div>
+
+<button type="submit" (click)="fazerLogin()"> Login</button>
